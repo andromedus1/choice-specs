@@ -16,7 +16,7 @@ Bedtime reading is the canonical use case for the visual reading market — and 
 - **VR headsets** — Vision Pro reviewers hit pain at 15–30 minutes; 500g+ on your face supine is a non-starter.
 - **Bed-prism reading glasses** — solve the neck-angle problem but not the arm-holding problem; heavy on the face; fall off.
 
-The underserved cohort is real: people who prefer visual reading at night, find audiobooks insufficient for retention or re-reading, and would pay for a device that solves the form factor. No one currently makes one. (The closest attempt, Sol Reader, shipped briefly in 2023 and was discontinued — see scout landscape.)
+The underserved cohort is real: people who prefer visual reading at night, find audiobooks insufficient for retention or re-reading, and would pay for a device that solves the form factor. The closest active product — **Sol Reader** — is a binocular goggle e-reader at $249 with 256×256/eye and a handheld remote. It validates that the category exists but leaves the **glasses form factor**, **monocular**, **lighter (<50g)**, and **hands-free input** axes still open. (See [Campaign 1 brief 9](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md) for full status and direct A/B; scout-landscape's earlier "discontinued" claim was incorrect and has been corrected.)
 
 ## Principles
 
@@ -108,17 +108,19 @@ The tooling — Calibre, DeDRM, ad-hoc converters — that produces EPUBs from u
 
 A coordinated `/research-program` of 4 campaigns, ~28 briefs total. **Sequencing:** Campaign 1 first (display gates everything); Campaigns 2 and 3 in parallel after; Campaign 4 last. Cross-campaign synthesis at the end ties tradeoffs that span campaigns (e.g., display tech ↔ power budget ↔ frame thermal design).
 
-### Campaign 1 — Display & Optics *(highest-leverage; gates everything)*
-- [ ] **E-ink microdisplay vendor landscape + direct E Ink Corp engagement** — sample availability for sub-1.3" panels, MOQs, sub-inch roadmap *(scout)*
-- [ ] **LCoS + warm-illuminator path** — Kopin parts, illumination architecture, power *(scout)*
-- [ ] **Micro-OLED at low refresh + dimming** — eye-comfort tradeoffs, warm-tinting, power profile *(scout + domain analysis)*
-- [ ] **Reflective LCD options** — Daylight-class panels at smaller form factor *(scout)*
-- [ ] **Pancake lens design** — Sol Reader path, sourcing, design files, optical efficiency *(scout)*
-- [ ] **Birdbath optics for monocular non-see-through reading** — ambient blocking is acceptable here *(scout)*
-- [ ] **Reflective combiner / freeform prism alternatives** — North Star descendants, custom optics *(scout)*
-- [ ] **Vergence-accommodation conflict + eye-comfort literature** — where should the page sit virtually for 90-minute sessions? *(domain analysis)*
-- [ ] **Sol Reader specific post-mortem** — commercial vs. UX vs. supply chain failure analysis *(scout)*
-- [ ] **Component sourcing as a hobbyist** — vendor channels, MOQs, lead times for displays, optics, IMU *(domain analysis)*
+### Campaign 1 — Display & Optics *(highest-leverage; gates everything)* — ✅ complete (2026-04-25)
+**Output:** [campaigns/01-display-and-optics/parent.md](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/parent.md) — synthesis recommends monocular pancake (salvaged Quest 3) + Pervasive Displays e-ink + virtual page at 50cm + dominant eye + occluded other eye. Display fallback order: e-ink → LCoS+amber → micro-OLED. ~$2k prototype budget.
+
+- [x] **E-ink microdisplay vendor landscape + direct E Ink Corp engagement** — confirms sub-1" gap; Pervasive Displays via DigiKey is the path. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/01-eink-microdisplay-landscape.md))*
+- [x] **LCoS + warm-illuminator path** — Kopin 0.20"–0.88" with amber LED is the credible non-e-ink fallback. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/02-lcos-warm-illuminator.md))*
+- [x] **Micro-OLED at low refresh + dimming** — third-priority fallback; never reaches still-as-paper feel. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/03-microoled-low-refresh.md))*
+- [x] **Reflective LCD options** — rejected; resolution insufficient + reflective premise fails in dark room. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/04-reflective-lcd.md))*
+- [x] **Pancake lens design** — recommended optical path; salvaged Quest 3 lens at $200–400. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/05-pancake-lens.md))*
+- [x] **Birdbath optics for monocular non-see-through reading** — secondary path; DisplayModule kit at $400–1.2k. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/06-birdbath-optics.md))*
+- [x] **Reflective combiner / freeform prism alternatives** — all rejected (overkill / unbuildable / patent-locked). *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/07-reflective-combiner-freeform-prism.md))*
+- [x] **Vergence-accommodation conflict + eye-comfort literature** — virtual page at 50cm (2.0 D), monocular, occluded unviewing eye. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/08-vergence-accommodation.md))*
+- [x] **Sol Reader status, lessons, direct comparison** — **correction:** Sol is shipping at $249, not discontinued; treat as production reference + buy for empirical baseline. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md))*
+- [x] **Component sourcing as a hobbyist** — ~$2k buildable via DigiKey/Mouser/Adafruit + DisplayModule + eBay salvage. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/10-component-sourcing.md))*
 
 ### Campaign 2 — Compute & Software Stack
 - [ ] **SoC selection tradeoff matrix** — RK3566 / ESP32-S3 / i.MX6 / Pi Zero 2W — power, RAM, dev experience, EPUB compatibility *(scout)*
@@ -128,6 +130,7 @@ A coordinated `/research-program` of 4 campaigns, ~28 briefs total. **Sequencing
 - [ ] **Library management UX for head-locked single-page interface** — how do you browse without a keyboard? *(domain analysis)*
 - [ ] **Typography at low resolution / monochrome** — Even G1's 640×200 case; what does a book actually look like? *(scout + domain analysis)*
 - [ ] **Page rendering pipeline architecture** — memory budget, cache strategy, refresh management *(domain analysis)*
+- [ ] *(Library navigation UX moved to Campaign 3 — single owner for screens design + input modality.)*
 
 ### Campaign 3 — Input & Interaction
 - [ ] **Head-tilt reliability in supine / reclined posture** — full literature synthesis with mitigation strategies *(scout)*
@@ -135,7 +138,7 @@ A coordinated `/research-program` of 4 campaigns, ~28 briefs total. **Sequencing
 - [ ] **Compound gesture design and segmentation** — false-positive minimization *(scout)*
 - [ ] **Calibration and drift handling over 1+ hour sessions** — stillness re-anchor, per-session calibration *(scout)*
 - [ ] **BT HID integration patterns** — pairing UX, latency, reliability under a blanket *(scout + domain analysis)*
-- [ ] **Library navigation UX without a keyboard** — head-tilt only; head-tilt + ring; voice ruled out *(domain analysis)*
+- [ ] **Library navigation UX (screens + input together)** — how does the library view render *and* how do you traverse it? Head-tilt only; head-tilt + ring; voice ruled out. Single owner for the whole nav experience. *(domain analysis)*
 - [ ] **Accessibility input prior art deep dive** — GlassOuse, dwell click, breath / jaw / eye-blink alternatives *(scout)*
 - [ ] **Peripheral fallback form factor** — ring vs. clicker vs. wrist remote vs. pendant; hands-under-blanket optimization *(scout)*
 
