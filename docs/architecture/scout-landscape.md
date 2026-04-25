@@ -39,22 +39,23 @@ This landscape maps prior art across the project's risk surfaces so that downstr
 
 ### Theme A — The only shipped predecessor
 
-#### [Sol Reader](https://solreader.com) — assessed, **shipping** (correction applied 2026-04-25)
+#### [Sol Reader](https://solreader.com) — assessed, **discontinued**
 
-> **Correction:** This scout originally recorded Sol Reader as "discontinued." Campaign 1 brief 9 confirmed that's wrong: Sol is actively shipping at $249 as of April 2026, added Kindle integration in June 2025, updated its iOS app in November 2025, and current production runs sell out. Sol is a working production reference, not a post-mortem subject.
+> **Note (2026-04-25):** Campaign 1 brief 9 initially claimed Sol was actively shipping at $249. **That was wrong** — direct verification of solreader.com confirmed the First Edition Sol Reader is labeled "Discontinued" with no purchase option. Brief 9 has been rewritten with the correct status; this scout entry retains its original framing.
 
-The only commercially-shipped e-ink HMD. Wearable e-reader goggles using E Ink panels viewed through pancake lenses. ~100g, $249 (originally $350 at 2023 launch). Two 1.3" E Ink panels at 256×256 per eye, ~300 PPI virtual after pancake magnification. WiFi sync, BLE handheld remote.
+The only commercially-shipped e-ink HMD ever found. Wearable e-reader goggles using E Ink panels viewed through pancake lenses. Less than 100g, ~$350 at launch (2023), now discontinued. Two 1.3" E Ink panels at 256×256 per eye, ~300 PPI virtual after pancake magnification. WiFi sync, BLE handheld remote.
 
 **Approach:** Pancake-lens optical path (not birdbath, not waveguide), 1.3" E Ink panels, binocular goggle form factor. Direct E Ink Corp engagement for the panel.
 
 **Lessons:**
-- Existence proof — and active shipping proof — that e-ink + near-eye optics works for reading.
-- Pancake lens is the right optical path — simpler than birdbath when see-through is not required. Choice-specs should adopt it.
+- Existence proof that e-ink + near-eye optics is physically buildable for reading.
+- Pancake lens was the chosen optical path — simpler than birdbath when see-through is not required. Choice-specs should still adopt it.
 - Resolution at 256×256/eye is the binding constraint and the dominant user complaint. Choice-specs should target higher native resolution (1.54"–2.13" panels).
 - Eye strain reports cluster around users with refractive errors — reinforces that VAC and accommodation matter, even though monocular sidesteps the worst of it.
 - Sol's "ski mask" goggle profile blocks ambient and is socially restricted. Choice-specs's <50g glasses-shape target is both lighter and more flexible.
+- Discontinuation is the single most important data point in this scout. The closest predecessor shipped briefly and was wound down. A specific post-mortem deserves its own research dig (commercial vs. UX vs. supply chain failure are very different lessons).
 
-**Relevance:** **The closest active prior art.** Every architecture decision should ask "did Sol try this, and how did it work?" — and a Sol Reader purchase is the recommended Day 1 empirical baseline before custom hardware. See [Campaign 1 brief 9](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md) for full status, lessons, and direct A/B with choice-specs.
+**Relevance:** This is the prior art that most directly defines what we're attempting. Every architecture decision should ask "did Sol Reader try this, and how did it go?" Since they no longer ship, an empirical baseline via purchase is no longer possible — used-market or community loans may substitute. See [Campaign 1 brief 9](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md) for the post-mortem.
 
 ---
 

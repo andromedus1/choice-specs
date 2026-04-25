@@ -85,11 +85,11 @@ documents:
     description: Recommends virtual page at 50cm (2.0 D), monocular on dominant eye, occluded unviewing eye. Monocular sidesteps stereoscopic VAC; matches natural reading distance and mental model.
     updated: 2026-04-25
   - path: docs/programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md
-    title: "Sol Reader: Status, Lessons, and Direct Comparison"
+    title: "Sol Reader: Post-Mortem and Direct Comparison"
     type: brief
     campaign: 01-display-and-optics
     program: choice-specs-feasibility
-    description: CORRECTION — Sol Reader is NOT discontinued. Active production at $249 as of 2026-04. Reframes the scout's "single most important data point" finding and identifies what to preserve/diverge from Sol's architecture.
+    description: Sol Reader is discontinued (verified 2026-04-25 directly from solreader.com). Architecture lessons preserved (pancake + e-ink + EPUB-only + BT remote validate the path); commercial post-mortem reframed as cautionary. An earlier version of this brief incorrectly claimed Sol was shipping; that has been corrected.
     updated: 2026-04-25
   - path: docs/programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/10-component-sourcing.md
     title: "Component Sourcing as a Hobbyist"
