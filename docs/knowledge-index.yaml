@@ -1,7 +1,7 @@
 # Auto-generated knowledge index for the choice-specs project.
 # Updated by /research, /brief, /architecture, /roadmap, and /knowledge-index.
 # Hand-maintained when introducing new core docs.
-# Last updated: 2026-04-25 (scout landscape added)
+# Last updated: 2026-04-25 (Campaign 2 added)
 
 documents:
   - path: docs/architecture/north-star.md
@@ -97,4 +97,118 @@ documents:
     campaign: 01-display-and-optics
     program: choice-specs-feasibility
     description: End-to-end procurement plan. ~$2k buildable prototype via DigiKey/Mouser/Adafruit (Tier 1) + DisplayModule/Alibaba (Tier 2) + eBay salvage (Quest 3 + Sol Reader + Kobo) + community channels.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/parent.md
+    title: "Campaign 2 — Compute & Software Stack: Synthesis"
+    type: brief
+    content_type: campaign-synthesis
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: i.MX6 Solo + Buildroot Linux + KOReader recommended; validated first via Kobo Clara HD then migrated to custom carrier. MentraOS path REJECTED — display capability below Sol baseline; phone-tether violates principle 1. Min panel 2.9" 296×128. ~21 mWh/session.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/01-soc-selection.md
+    title: "SoC Selection Tradeoff Matrix"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: NXP i.MX6 Solo recommended primary (KOReader ships on it; mature DSM ~10 mW; Day-1 Kobo Clara HD validation path). ESP32-S3 fallback if SoM sourcing fails. RK3566 (500 mW idle floor), Pi Zero 2W (no real sleep state), Apollo4 (SRAM ceiling), AR1 (closed SDK) all ruled out.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/02-epub-renderer.md
+    title: "EPUB Renderer Comparison"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: KOReader (crengine) recommended primary — most mature open-source EPUB engine; 50-language hyphenation; battle-tested e-ink refresh; Lua-pluggable for choice-specs UX. Plato fallback (Rust, smaller RSS). Custom-on-Linux rejected (Plato exists at MIT). atomic14-style on ESP32-S3 only if SoC drops sub-Linux.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/03-os-choice.md
+    title: "OS Choice"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: Buildroot Linux on i.MX6 Solo with NXP BSP; simple shell init, read-only root, U-Boot dual-partition USB-C update. Achieves ~10 mW DSM and ~150 ms wake. FreeRTOS via ESP-IDF as fallback. Yocto / Debian / Zephyr / bare-metal / microkernel all rejected.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/04-mentraos-evaluation.md
+    title: "MentraOS Deep Evaluation"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: REJECTED as primary build target. Vuzix Z100 doesn't support bitmap rendering through MentraOS (text-only); Even G1 supports bitmaps but at 640×200 = ~30 wpp (below Sol baseline); architecture requires phone tether (violates principle 1); IMU API undocumented + cloud-mediated latency 200–500 ms. Useful only as $599 UX-validation toy. Re-evaluate when G2 docs publish or standalone runtime appears.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/05-typography-low-res.md
+    title: "Typography at Low Resolution / Monochrome"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: Min acceptable native panel ~40k pixels — rules out 1.54" 200×200 and 2.13" 250×122 for worn prototype. Target Pervasive Displays 2.9" 296×128 default; 4.2" 400×300 stretch. Literata body font, 14–16 px, 1.4× leading, left-aligned default. Full flash every 6th turn. Words-per-page (not virtual PPI) is binding metric.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/02-compute-and-software/briefs/06-rendering-pipeline.md
+    title: "Page Rendering Pipeline Architecture"
+    type: brief
+    campaign: 02-compute-and-software
+    program: choice-specs-feasibility
+    description: 8-module pipeline (InputAdapter→AppController→ReadingView→BookLoader→ReflowEngine→Pager→Rasterizer→FrameBufferDriver+EinkRefreshPolicy). 4-page bitmap cache (current ±1, +2 prefetch). ~180 MB peak on 512 MB; ~21 mWh/90-min session. Cold boot 3.7 s; wake-to-page 600 ms. i.MX6 native EPDC for Phase 1; Caster optional Phase 2.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/parent.md
+    title: "Campaign 3 — Input & Interaction: Synthesis"
+    type: brief
+    content_type: campaign-synthesis
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Input/interaction recommendations — head-tilt as primary input (conditional yes with 5-mitigation stack), Mahony fusion on BMI270, 4-gesture compound vocabulary (tilt+400ms hold), three-screen library nav UX, Gevo BT ring as fallback peripheral.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/01-head-tilt-supine-reliability.md
+    title: "Head-Tilt Reliability in Supine / Reclined Posture"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Head-tilt is feasible as primary input only with the full 5-mitigation stack (compound gesture, per-session calibration, ZUPT, velocity gate, refractory window). Target FP rate <1 unintended page-turn per 60-min session. IMU above the bridge.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/02-imu-sensor-fusion.md
+    title: "IMU Sensor Fusion Approaches"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Mahony filter at 100 Hz on BMI270 in raw mode (not BNO055 on-chip fused mode). `ahrs` Rust crate. Deep-sleep between gestures with any-motion wake gives ~30-40 mW average. Madgwick fallback. Kalman/EKF/ML rejected.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/03-compound-gesture-design.md
+    title: "Compound Gesture Design and Segmentation"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: 4-gesture vocabulary (roll right/left for next/prev page, pitch up/down for menu/select), all compound (tilt + 400ms hold). State-machine segmenter (IDLE→ACTIVE→HOLD→FIRE→REFRACTORY). End-to-end ~750ms latency. Corner-pixel visual feedback + optional ring haptic.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/04-calibration-drift-handling.md
+    title: "Calibration and Drift Handling"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Three-layer state machine — per-session calibration (1.5s stillness handshake at session start), continuous ZUPT during pauses ≥1s (eliminates ~80% of drift), auto-recalibrate on sustained 20° deviation. Manual recalibrate via long-press for "I just rolled over" cases.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/05-bt-hid-integration.md
+    title: "BT HID Integration Patterns"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Just-Works BLE pairing (no companion phone), glasses act as HID Host. Latency <350ms end-to-end. Antenna on dominant-eye temple. Blanket attenuation ~2-4 dB negligible vs 80+ dB BLE link budget. Body absorption is the real concern — ring on top of body, not under torso.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/06-library-nav-ux.md
+    title: "Library Navigation UX (Screens + Input Together)"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Three-screen architecture (Library / Reading / Settings). Vertical list, 6 items per screen, recents-first, currently-reading at top. Half-page scroll on roll, hold-to-fast-scroll. Alphabet bar at >50 books. No grid view, no search, no folders in v1.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/07-accessibility-input-prior-art.md
+    title: "Accessibility Input Prior Art Deep Dive"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Five accessibility patterns adopted — 400-600ms dwell with visual countdown, brief per-session calibration, fail-quiet on ambiguity, self-inverse gesture set (no confirm flows), no sustained-effort gestures. Switch scanning and BCI rejected as not fitting our modality.
+    updated: 2026-04-25
+  - path: docs/programs/choice-specs-feasibility/campaigns/03-input-and-interaction/briefs/08-peripheral-form-factor.md
+    title: "Peripheral Fallback Form Factor"
+    type: brief
+    campaign: 03-input-and-interaction
+    program: choice-specs-feasibility
+    description: Gevo BT Page Turner Ring as primary ($20-30, USB-C case, 14hr active / 60d standby, 3-button HID). Generic BT clicker as palm-dongle backup with BLE-locator-chirp feature. Wrist clicker, pendant, finger sleeve rejected. Genki Wave (haptic) deferred to v2.
     updated: 2026-04-25
