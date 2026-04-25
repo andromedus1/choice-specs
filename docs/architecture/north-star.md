@@ -16,7 +16,7 @@ Bedtime reading is the canonical use case for the visual reading market — and 
 - **VR headsets** — Vision Pro reviewers hit pain at 15–30 minutes; 500g+ on your face supine is a non-starter.
 - **Bed-prism reading glasses** — solve the neck-angle problem but not the arm-holding problem; heavy on the face; fall off.
 
-The underserved cohort is real: people who prefer visual reading at night, find audiobooks insufficient for retention or re-reading, and would pay for a device that solves the form factor. The closest active product — **Sol Reader** — is a binocular goggle e-reader at $249 with 256×256/eye and a handheld remote. It validates that the category exists but leaves the **glasses form factor**, **monocular**, **lighter (<50g)**, and **hands-free input** axes still open. (See [Campaign 1 brief 9](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md) for full status and direct A/B; scout-landscape's earlier "discontinued" claim was incorrect and has been corrected.)
+The underserved cohort is real: people who prefer visual reading at night, find audiobooks insufficient for retention or re-reading, and would pay for a device that solves the form factor. No one currently makes one. The closest attempt — **Sol Reader** — was a binocular goggle e-reader (~$350, 256×256/eye, handheld remote) that shipped in 2023 and has since been discontinued. It validates that the category is technically buildable but didn't sustain a market in its form factor. Choice-specs differs on the **glasses form factor**, **monocular**, **lighter (<50g)**, and **hands-free input** axes. (See [Campaign 1 brief 9](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md) for the post-mortem.)
 
 ## Principles
 
@@ -119,7 +119,7 @@ A coordinated `/research-program` of 4 campaigns, ~28 briefs total. **Sequencing
 - [x] **Birdbath optics for monocular non-see-through reading** — secondary path; DisplayModule kit at $400–1.2k. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/06-birdbath-optics.md))*
 - [x] **Reflective combiner / freeform prism alternatives** — all rejected (overkill / unbuildable / patent-locked). *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/07-reflective-combiner-freeform-prism.md))*
 - [x] **Vergence-accommodation conflict + eye-comfort literature** — virtual page at 50cm (2.0 D), monocular, occluded unviewing eye. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/08-vergence-accommodation.md))*
-- [x] **Sol Reader status, lessons, direct comparison** — **correction:** Sol is shipping at $249, not discontinued; treat as production reference + buy for empirical baseline. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md))*
+- [x] **Sol Reader post-mortem** — confirmed discontinued (the only shipped predecessor); architecture lessons preserved (pancake + e-ink + EPUB-only + BT remote validate the path) but commercial post-mortem reframed as cautionary. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/09-sol-reader-postmortem.md))*
 - [x] **Component sourcing as a hobbyist** — ~$2k buildable via DigiKey/Mouser/Adafruit + DisplayModule + eBay salvage. *([brief](../programs/choice-specs-feasibility/campaigns/01-display-and-optics/briefs/10-component-sourcing.md))*
 
 ### Campaign 2 — Compute & Software Stack
