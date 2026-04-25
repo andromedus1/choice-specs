@@ -1,0 +1,16 @@
+# Auto-generated knowledge index for the choice-specs project.
+# Updated by /research, /brief, /architecture, /roadmap, and /knowledge-index.
+# Hand-maintained when introducing new core docs.
+# Last updated: 2026-04-25 (scout landscape added)
+
+documents:
+  - path: docs/architecture/north-star.md
+    title: "North Star: choice-specs"
+    type: north-star
+    description: Vision, principles, domain model, and 4-campaign research plan for a standalone AR-glasses bedtime book reader.
+    updated: 2026-04-25
+  - path: docs/architecture/scout-landscape.md
+    title: "Scout Landscape: choice-specs"
+    type: landscape
+    description: Prior art map across display tech, optics, AR platforms, compute, EPUB readers, head-tilt input, HUD analogues, and bedtime/sleep tech form factors. Recommends a 4-campaign /research-program.
+    updated: 2026-04-25
