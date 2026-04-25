@@ -58,12 +58,12 @@ After all campaigns complete:
 
 | Campaign | Status | Started | Completed | Notes |
 |---|---|---|---|---|
-| C1 — Display & Optics | ✅ complete | 2026-04-25 | 2026-04-25 | monocular pancake + e-ink @ 50cm. Sol Reader correction surfaced. |
-| C2 — Compute & Software | dispatched | 2026-04-25 | — | depends on C1; inherits e-ink + ~300–500 mW power budget |
-| C3 — Input & Interaction | dispatched | 2026-04-25 | — | depends on C1; owns library nav UX; inherits monocular optical engine |
-| C4 — ID, Power, Safety | pending | — | — | depends on C1+C2+C3 |
-| Cross-campaign synthesis | pending | — | — | after all campaigns |
-| Program evaluation | pending | — | — | independent pass |
+| C1 — Display & Optics | ✅ complete | 2026-04-25 | 2026-04-25 | monocular pancake + e-ink @ 50cm. Sol Reader status corrected (discontinued, verified directly). |
+| C2 — Compute & Software | ✅ complete | 2026-04-25 | 2026-04-25 | i.MX6 Solo + Buildroot + KOReader. Validate via Kobo Clara HD. MentraOS rejected. |
+| C3 — Input & Interaction | ✅ complete | 2026-04-25 | 2026-04-25 | Head-tilt conditional primary (5-mitigation stack); 3-screen library nav; Mahony @ 100Hz on BMI270. |
+| C4 — ID, Power, Safety | pending (next 5hr window) | — | — | depends on C1+C2+C3 |
+| Cross-campaign synthesis | pending (next 5hr window) | — | — | after all campaigns |
+| Program evaluation | pending (next 5hr window) | — | — | independent pass |
 
 ## Budget
 
